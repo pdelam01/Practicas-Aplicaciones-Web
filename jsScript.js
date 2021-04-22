@@ -17,7 +17,7 @@ let alf="clanciannacinacecenapenarematoremotomoteroloterotolerotorero";
 function crearTabla() {
     let div = document.getElementsByTagName("div")[4];
     let form = document.createElement("form");
-    form.name = "myFrom";
+
     let idsNum = 1;
     let aux=1;
 
@@ -29,6 +29,7 @@ function crearTabla() {
     let input;
     let et;
 
+    form.name = "myFrom";
     for (let i = 0; i < 6; i++) {
         hilera = document.createElement("tr");
 
