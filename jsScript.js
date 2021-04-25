@@ -1,19 +1,25 @@
-var items = [
-    ["C", "L", "A", "N"],
-    ["C", "I", "A", "N"],
-    ["N", "A", "C", "I"],
-    ["N", "A", "C", "E"],
-    ["C", "E", "N", "A"],
-    ["P", "E", "N", "A"],
-    ["R", "E", "M", "A", "T", "O"],
-    ["R", "E", "M", "O", "T", "O"],
-    ["M", "O", "T", "E", "R", "O"],
-    ["L", "O", "T", "E", "R", "O"],
-    ["T", "O", "L", "E", "R", "O"],
-    ["T", "O", "T", "E", "R", "O"],
-];
-let alf="clanciannacinacecenapenarematoremotomoteroloterotolerotorero";
+//----------------------------------//
+//       VARIABLES GLOBALES         //
+//----------------------------------//
+var cont=3;
+var arr = [];
+var divis = document.createElement("div");
+var script;
+var resp=[];
 
+
+//---------------------------------//
+//         INICIALIZACION          //
+//---------------------------------//
+function start(){
+    crearTabla();
+    loadData();
+    cargaAsyn();
+}
+
+//---------------------------------//
+//      FUNCIONES PRINCIPALES      //
+//---------------------------------//
 function crearTabla() {
     let div = document.getElementsByTagName("div")[4];
     let form = document.createElement("form");
@@ -103,11 +109,13 @@ function crearTabla() {
     form.className= "former";
 }
 
+
 function saveData(){
     for (let i = 1; i <= 60; i++) {
         localStorage.setItem(i.toString(), document.getElementById(i.toString()).value);
     }
 }
+
 
 function loadData() {
     for (let i = 1; i <= 60; i++) {
@@ -128,6 +136,7 @@ function displayText(){
         }
     }
 }
+
 
 function createButtons(form){
     let resetBtn = document.createElement("input");
@@ -161,27 +170,11 @@ function createButtons(form){
 }
 
 
-let cont=3;
-let arr = [];
-let flags = 'g';
 function mostrarPista(){
     if(cont==0){
         alert("¡Número de máximo pistas alcanzado!")
     } else {
-        //let texto = prompt("Escriba su palabra: ","Pistas restantes: "+cont);
-        //let regex = new RegExp("[a-zA-Z]*" + texto.toString() + "[a-zA-Z]*",flags);
-        //let regex = new RegExp("[^\s]*" + texto.toString() + "[^\s]*",flags);
-        /*for (let i = 0; i < texto.length; i++) {
-            let regex = new RegExp("[a-zA-Z]*" + texto.charAt(i) + "[a-zA-Z]*",flags);
-            if(resp.toString().matchAll(regex)){
-                for (let i of resp.toString().matchAll(regex)) {
-                    arr.push(" "+i)
-                }
-                funcion(arr);
-                arr=[];
-            }*/
-
-        let texto = prompt("Escriba su palabra: ", "Pistas restantes: " + cont);
+        let texto = prompt("Escriba las letras: ", "Pistas restantes: " + cont);
         if(texto!=null) {
             const output = find(resp, texto);
             for (let i of output) {
@@ -191,8 +184,10 @@ function mostrarPista(){
             arr = [];
             cont--;
         }
+        console.log(texto)
     }
 }
+
 
 function find(palabras, str) {
     //Dividimos el String en un array
@@ -209,7 +204,6 @@ function find(palabras, str) {
 
 
 function funcion(arr){
-    let divis = document.createElement("div");
     let body = document.getElementsByTagName("body")[0];
     let head = document.createElement("h2");
     head.innerHTML="Lista de palabras"
@@ -220,8 +214,7 @@ function funcion(arr){
     body.appendChild(divis);
 }
 
-var script;
-var resp=[];
+
 async function cargaAsyn() {
     script = document.createElement("script");
     script.src = "https://ordenalfabetix.unileon.es/aw/diccionario.txt";
@@ -229,10 +222,15 @@ async function cargaAsyn() {
     document.body.append(script);
 
     Promise.all([
-        fetch(script.src).then(x => x.text()),
+        await fetch(script.src).then(x => x.text()),
     ]).then(([respuesta]) => {
         prepararResp(respuesta);
     });
+}
+
+
+function removeAccents(str){
+    return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
 }
 
 
@@ -243,6 +241,7 @@ function checkCorrecto(){
     let arr6Aux=[];
     let auxCont=0;
     let auxCont2=0;
+    let comprobacion=0;
 
     for (let i = 0; i < 24; i++) {
         arrDe4.push(document.getElementById(""+(i+1)).value)
@@ -255,30 +254,89 @@ function checkCorrecto(){
     arr4Aux=dividirEnGrupos(arrDe4,4);
     arr6Aux=dividirEnGrupos(arrDe6,6);
 
+
     if(comprobaciones(arr4Aux,arr6Aux)){
         for (let j = 0; j < arr4Aux.length; j++) {
-            if (resp.includes(arr4Aux[j].join("").toString().toLowerCase())) {
-                auxCont++;
-            }
+            //if (resp.includes(arr4Aux[j].join("").toString().toLowerCase())) {
+                if(arr4Aux[j+1]==undefined || arr6Aux[j+1]==undefined){
+                    break;
+                }
+                if(comprobacion%2!==0){
+                    if(comprobacionLetra(removeAccents(arr4Aux[j].join("").toString().toLowerCase()),removeAccents(arr4Aux[j+1].join("").toString().toLowerCase()))){
+                        auxCont++;
+                    }
+                }else{
+                    if(comprobacionOrden(removeAccents(arr4Aux[j].join("").toString().toLowerCase()),removeAccents(arr4Aux[j+1].join("").toString().toLowerCase()))){
+                        auxCont++;
+                    }
+                }
+            //}
 
-            if (resp.includes(arr6Aux[j].join("").toString().toLowerCase())) {
-                auxCont2++;
-            }
+            //if (resp.includes(arr6Aux[j].join("").toString().toLowerCase())) {
+                if(comprobacion%2!==0){
+                    if(comprobacionLetra(removeAccents(arr6Aux[j].join("").toString().toLowerCase()),removeAccents(arr6Aux[j+1].join("").toString().toLowerCase()))){
+                        auxCont2++;
+                    }
+                }else{
+                    if(comprobacionOrden(removeAccents(arr6Aux[j].join("").toString().toLowerCase()),removeAccents(arr6Aux[j+1].join("").toString().toLowerCase()))){
+                        auxCont2++;
+                    }
+                }
+            //}
+            comprobacion++;
+            console.log("Comprobacion: "+comprobacion);
+            console.log("cont 1: "+auxCont);
+            console.log("cont 2: "+auxCont2);
         }
 
-        if (auxCont === 6 && auxCont2 === 5) {
+
+
+        if (auxCont === 5 && auxCont2 === 5) {
             alert("¡Perfecto! Puzzle completado")
         } else {
             alert("Lo siento... algo debe estar mal")
         }
+
     }else{
         alert("Lo siento... algo debe estar mal")
     }
 }
 
+
+function comprobacionLetra(primera,segunda) {
+    console.log(primera)
+    console.log(segunda)
+    let distinto=0;
+    for (let i = 0; i < primera.length; i++) {
+        if(!primera.includes(segunda[i])){
+            distinto++;
+        }
+    }
+    console.log(distinto)
+    return distinto == 0;
+}
+
+
+function comprobacionOrden(primera,segunda){
+    let igual=0;
+    console.log(primera)
+    console.log(segunda)
+    for (let i = 0; i < primera.length; i++) {
+        if(primera[i]==segunda[i]){
+            igual++;
+        }
+    }
+    console.log("---------igual: "+igual)
+    if(igual==3){
+        return true;
+    }else return igual == 5;
+}
+
+
 function prepararResp(dictionary){
     return resp=dictionary.split("\n")
 }
+
 
 function comprobaciones(arr4Aux,arr6Aux){
     let aux=false;
@@ -303,6 +361,7 @@ function comprobaciones(arr4Aux,arr6Aux){
     }
 }
 
+
 function dividirEnGrupos(input,tam) {
     let division = [];
     for (let i = 0;  i < input.length; i += tam) {
@@ -311,38 +370,3 @@ function dividirEnGrupos(input,tam) {
     return division;
 }
 
-function start(){
-    crearTabla();
-    loadData();
-    cargaAsyn();
-}
-
-/*function retornarPalabras(){
-    let arr = [];
-    let cont=0;
-    for (let i=0;i<60;i++){
-        arr.push(document.getElementById(""+(i+1)).value)
-        cont ++;
-        if(cont==4) {
-            break;
-        }
-    }
-    alert(arr.join("").toString().toLowerCase())
-    return arr.join("").toString().toLowerCase();
-}*/
-
-/*function checkCorrecto(){
-    let cont=0;
-    //comprobar correccion frente a dic
-    for (let i=1;i<=alf.length;i++){
-        if (document.getElementById(i.toString()).value.toUpperCase() == alf[i-1].toString().toUpperCase()){
-            cont++;
-        }
-    }
-
-    if(cont==alf.length){
-        alert("¡Perfecto! Puzzle completado")
-    }else{
-        alert("Lo siento... algo debe estar mal")
-    }
-}*/

@@ -1,11 +1,7 @@
 body {
     background-color: #68C3D4;
+    min-width: 1400px;
 }
-
-/*hr {
-   border: 0px solid #6883BA;
-   border-top: 3px solid #6883BA;
-}*/
 
 h2{
     text-align:center;
@@ -87,9 +83,10 @@ h2{
 }
 
 .cuadrados {
+    display: block;
     width: 35px;
     height: 35px;
-    margin: 0;
+    margin: 0 auto;
     padding: 0;
     text-align: center;
     border-collapse: collapse;
@@ -98,8 +95,9 @@ h2{
 }
 
 .tabla {
+    border-collapse: collapse; outline: none; table-layout: fixed;
     margin: 0 auto;
-    text-align: left;
+    text-align: center;
 }
 
 .former{
