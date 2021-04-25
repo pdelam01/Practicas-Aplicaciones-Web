@@ -207,10 +207,11 @@ function find(palabras, str) {
     });
 }
 
-let divis = document.createElement("div");
-let body = document.getElementsByTagName("body")[0];
-let head = document.createElement("h2");
+
 function funcion(arr){
+    let divis = document.createElement("div");
+    let body = document.getElementsByTagName("body")[0];
+    let head = document.createElement("h2");
     head.innerHTML="Lista de palabras"
     divis.className="items2";
     divis.textContent=arr;
@@ -223,8 +224,7 @@ var script;
 var resp=[];
 async function cargaAsyn() {
     script = document.createElement("script");
-    //script.src = "https://ordenalfabetix.unileon.es/aw/diccionario.txt";
-    script.src = "https://diccionario.casasoladerueda.es/diccionario.txt";
+    script.src = "https://ordenalfabetix.unileon.es/aw/diccionario.txt";
     script.crossOrigin = "anonymous";
     document.body.append(script);
 
