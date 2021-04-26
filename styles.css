@@ -1,6 +1,6 @@
 body {
     background-color: #68C3D4;
-    min-width: 1400px;
+    min-width: 1250px;
 }
 
 h2{
@@ -110,7 +110,7 @@ h2{
     margin:15px;
     font-weight: bold;
     text-align: center;
-    width: 90px;
+    width: 100px;
     height: 40px;
 }
 

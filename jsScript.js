@@ -257,7 +257,7 @@ function checkCorrecto(){
 
     if(comprobaciones(arr4Aux,arr6Aux)){
         for (let j = 0; j < arr4Aux.length; j++) {
-            //if (resp.includes(arr4Aux[j].join("").toString().toLowerCase())) {
+            if (resp.includes(arr4Aux[j].join("").toString().toLowerCase())) {
                 if(arr4Aux[j+1]==undefined || arr6Aux[j+1]==undefined){
                     break;
                 }
@@ -270,9 +270,9 @@ function checkCorrecto(){
                         auxCont++;
                     }
                 }
-            //}
+            }
 
-            //if (resp.includes(arr6Aux[j].join("").toString().toLowerCase())) {
+            if (resp.includes(arr6Aux[j].join("").toString().toLowerCase())) {
                 if(comprobacion%2!==0){
                     if(comprobacionLetra(removeAccents(arr6Aux[j].join("").toString().toLowerCase()),removeAccents(arr6Aux[j+1].join("").toString().toLowerCase()))){
                         auxCont2++;
@@ -282,11 +282,8 @@ function checkCorrecto(){
                         auxCont2++;
                     }
                 }
-            //}
+            }
             comprobacion++;
-            console.log("Comprobacion: "+comprobacion);
-            console.log("cont 1: "+auxCont);
-            console.log("cont 2: "+auxCont2);
         }
 
 
@@ -304,29 +301,25 @@ function checkCorrecto(){
 
 
 function comprobacionLetra(primera,segunda) {
-    console.log(primera)
-    console.log(segunda)
     let distinto=0;
     for (let i = 0; i < primera.length; i++) {
         if(!primera.includes(segunda[i])){
             distinto++;
         }
     }
-    console.log(distinto)
+
     return distinto == 0;
 }
 
 
 function comprobacionOrden(primera,segunda){
     let igual=0;
-    console.log(primera)
-    console.log(segunda)
     for (let i = 0; i < primera.length; i++) {
         if(primera[i]==segunda[i]){
             igual++;
         }
     }
-    console.log("---------igual: "+igual)
+
     if(igual==3){
         return true;
     }else return igual == 5;
