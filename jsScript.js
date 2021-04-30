@@ -184,7 +184,6 @@ function mostrarPista(){
             arr = [];
             cont--;
         }
-        console.log(texto)
     }
 }
 
@@ -242,6 +241,7 @@ function checkCorrecto(){
     let auxCont=0;
     let auxCont2=0;
     let comprobacion=0;
+    let noDict=[];
 
     for (let i = 0; i < 24; i++) {
         arrDe4.push(document.getElementById(""+(i+1)).value)
@@ -270,6 +270,8 @@ function checkCorrecto(){
                         auxCont++;
                     }
                 }
+            }else{
+                alert("La palabra: '"+arr4Aux[j].join("").toString().toLowerCase()+"' no se encuentra en el diccionario");
             }
 
             if (resp.includes(arr6Aux[j].join("").toString().toLowerCase())) {
@@ -282,6 +284,8 @@ function checkCorrecto(){
                         auxCont2++;
                     }
                 }
+            }else{
+                alert("La palabra: '"+arr6Aux[j].join("").toString().toLowerCase()+"' no se encuentra en el diccionario");
             }
             comprobacion++;
         }
@@ -291,7 +295,7 @@ function checkCorrecto(){
         if (auxCont === 5 && auxCont2 === 5) {
             alert("¡Perfecto! Puzzle completado")
         } else {
-            alert("Lo siento... algo debe estar mal")
+            alert("Lo siento... Puzzle no completado")
         }
 
     }else{
@@ -307,7 +311,6 @@ function comprobacionLetra(primera,segunda) {
             distinto++;
         }
     }
-
     return distinto == 0;
 }
 
@@ -319,7 +322,6 @@ function comprobacionOrden(primera,segunda){
             igual++;
         }
     }
-
     if(igual==3){
         return true;
     }else return igual == 5;
@@ -327,7 +329,7 @@ function comprobacionOrden(primera,segunda){
 
 
 function prepararResp(dictionary){
-    return resp=dictionary.split("\n")
+    return resp=dictionary.split("\n");
 }
 
 
@@ -362,4 +364,11 @@ function dividirEnGrupos(input,tam) {
     }
     return division;
 }
+
+
+function acceptCookies() {
+    localStorage.acceptCookies = 'true';
+    document.getElementById("div-cookies").style.visibility = "hidden";
+}
+
 

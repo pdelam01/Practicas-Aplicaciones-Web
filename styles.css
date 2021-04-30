@@ -107,11 +107,27 @@ h2{
 
 .botones{
     background-color: lightgray;
+    transition: background-color .6s;
     margin:15px;
     font-weight: bold;
     text-align: center;
     width: 100px;
     height: 40px;
+}
+
+.botones:hover{
+    background-color: lightyellow;
+}
+
+#div-cookies {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: lightgray;
+    box-shadow: 0 -5px 10px gray;
+    padding: 5px;
+    text-align: center;
 }
 
 
