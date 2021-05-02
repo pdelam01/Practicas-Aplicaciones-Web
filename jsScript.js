@@ -125,7 +125,7 @@ function loadData() {
 
 
 function displayText(){
-    if(confirm("¿Desearía ALMACENAR su progreso en almacenamiento local?")){
+    if(confirm("¿Desearía ALMACENAR su progreso en almacenamiento local?\n\nSi pulsa cancelar podrá elegir borrarlo")){
         saveData();
     }else{
         if(confirm("¿Desearía ELIMINAR su progreso en almacenamiento local?")){
