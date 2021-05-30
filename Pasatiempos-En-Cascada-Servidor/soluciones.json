@@ -1,0 +1,23 @@
+{
+    "soluciones": {
+        "pasatiempo1": [
+            "clan",
+            "pena",
+            "remato",
+            "torero"
+        ],
+        "pasatiempo2": [
+            "doce",
+            "rimo",
+            "cámara",
+            "abrasa"
+        ],
+
+        "pasatiempo3": [
+            "acto",
+            "azar",
+            "piraña",
+            "aparto"
+        ]
+    }
+}

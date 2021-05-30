@@ -1,0 +1,133 @@
+body {
+    background-color: #546A7B;
+    min-width: 1250px;
+}
+
+h2{
+    text-align:center;
+    background-color: #62929E;
+    margin-top: 20px;
+    margin-left: 30px;
+    margin-right: 30px;
+    border-style: outset;
+}
+
+.sup {
+    background-color: #C6C5B9;
+    border-style: double;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+#a1 {
+    font-style: italic;
+    font-weight: bold;
+    font-size: 3em;
+}
+
+#a2 {
+    font-weight: bold;
+    font-size: 2em;
+}
+
+.container {
+    padding: 1em;
+}
+
+.items {
+    background-color: #AEC3B0;
+    border-style: double;
+    width: 25%;
+    margin: 1em;
+}
+
+.items2 {
+    background-color: #AEC3B0;
+    border-style: double;
+    text-align: justify;
+    width: auto;
+    padding: 10px;
+}
+
+#izq {
+    margin: 0 auto;
+    float: left;
+    height: auto;
+    text-align: center;
+}
+
+#instr {
+    text-align: justify;
+    font-family: Georgia, "Times New Roman", Times, serif;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+#list{
+    font-family: Georgia, "Times New Roman", Times, serif;
+    text-align: left;
+}
+
+#der {
+    margin: 0 auto;
+    float: right;
+    height: auto;
+    text-align: center;
+}
+
+#centro {
+    margin: 0 auto;
+    width: 40%;
+    align-content: center;
+    height: auto;
+}
+
+.cuadrados {
+    display: block;
+    width: 35px;
+    height: 35px;
+    margin: 0 auto;
+    padding: 0;
+    text-align: center;
+    border-collapse: collapse;
+    position: relative;
+    background-color: #EEEEEEFF;
+}
+
+.tabla {
+    border-collapse: collapse; outline: none; table-layout: fixed;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.former{
+    text-align: center;
+    margin: 10px;
+}
+
+.botones{
+    background-color: lightgray;
+    transition: background-color .6s;
+    margin:15px;
+    font-weight: bold;
+    text-align: center;
+    width: 100px;
+    height: 40px;
+}
+
+.botones:hover{
+    background-color: lightyellow;
+}
+
+#div-cookies {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: lightgray;
+    box-shadow: 0 -5px 10px gray;
+    padding: 5px;
+    text-align: center;
+}
+
+
