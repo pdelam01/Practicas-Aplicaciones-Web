@@ -1,7 +1,7 @@
 # OnkisKromos
 
 <div align='center'> 
-    <img height='250' width='250' src="/public/resources/logo.png" alt="logo" />
+    <img height='250' width='250' src="../public/resources/logo.png" alt="logo" />
 </div><br>
 
 ## Descripcion 🤠
