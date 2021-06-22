@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Colecciones - Socio</title>
+    <meta name="description" content="Main page del socio">
+    <link rel="icon" href="https://image.flaticon.com/icons/png/512/3587/3587855.png" type="image/ico" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i">
+    <link rel="stylesheet" href="assets/fonts/fontawesome-all.min.css">
+    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/fonts/ionicons.min.css">
+    <link rel="stylesheet" href="assets/fonts/fontawesome5-overrides.min.css">
+    <link rel="stylesheet" href="assets/css/Footer-Dark.css">
+    <link rel="stylesheet" href="assets/css/Team-Boxed.css">
+    <link rel="stylesheet" href="assets/css/user-panel.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="/landingPageUser/javascripts/scriptTableUser.js" type="text/javascript"></script>
+</head>
+
+<body onload="start()" id="page-top">
+    <div id="wrapper">
+        <nav class="navbar navbar-dark align-items-start sidebar sidebar-dark accordion bg-gradient-primary p-0">
+            <div class="container-fluid d-flex flex-column p-0"><a class="navbar-brand d-flex justify-content-center align-items-center sidebar-brand m-0" href="#">
+                    Socio
+                    <div class="sidebar-brand-icon rotate-n-15"></div>
+                    <div class="sidebar-brand-text mx-3"><span><img class="admin-logo" src="assets/img/kiosk2.png"></span></div>
+                </a>
+                <hr class="sidebar-divider my-0">
+                <ul class="navbar-nav text-light" id="accordionSidebar">
+                    <li class="nav-item"><a class="nav-link" href="/landingPageUser/index"><i class="fas fa-tachometer-alt"></i><span>Dashboard</span></a></li>
+                    <li class="nav-item"></li>
+                    <li class="nav-item"><a class="nav-link active" href="/landingPageUser/table"><i class="fas fa-table"></i><span>Colecciones</span></a></li>
+                    <li class="nav-item"><a class="nav-link" href="/landingPageUser/games"><i class="fa fa-money"></i><span>Ganar Puntos</span></a><a class="nav-link" href="/landingPageUser/buysell"><i class="fa fa-money"></i><span>Compra-Venta Kromos</span></a></li>
+                </ul>
+                <div class="text-center d-none d-md-inline"><button class="btn rounded-circle border-0" id="sidebarToggle" type="button"></button></div>
+            </div>
+        </nav>
+        <div class="d-flex flex-column" id="content-wrapper">
+            <div id="content">
+                <nav class="navbar navbar-light navbar-expand bg-white shadow mb-4 topbar static-top">
+                    <div class="container-fluid"><button class="btn btn-link d-md-none rounded-circle me-3" id="sidebarToggleTop" type="button"><i class="fas fa-bars"></i></button>
+                        <form class="d-none d-sm-inline-block me-auto ms-md-3 my-2 my-md-0 mw-100 navbar-search">
+                            <div class="input-group"><input class="bg-light form-control border-0 small" type="text" placeholder="Buscar..."><button class="btn btn-primary py-0" type="button"><i class="fas fa-search"></i></button></div>
+                        </form>
+                        <ul class="navbar-nav flex-nowrap ms-auto">
+                            <li class="nav-item dropdown d-sm-none no-arrow"><a class="dropdown-toggle nav-link" aria-expanded="false" data-bs-toggle="dropdown" href="#"><i class="fas fa-search"></i></a>
+                                <div class="dropdown-menu dropdown-menu-end p-3 animated--grow-in" aria-labelledby="searchDropdown">
+                                    <form class="me-auto navbar-search w-100">
+                                        <div class="input-group"><input class="bg-light form-control border-0 small" type="text" placeholder="Search for ...">
+                                            <div class="input-group-append"><button class="btn btn-primary py-0" type="button"><i class="fas fa-search"></i></button></div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </li>
+                            <li class="nav-item dropdown no-arrow mx-1">
+                                <div class="nav-item dropdown no-arrow"><a class="dropdown-toggle nav-link" aria-expanded="false" data-bs-toggle="dropdown" href="#"><span class="badge bg-danger badge-counter">3+</span><i class="fas fa-bell fa-fw"></i></a>
+                                    <div class="dropdown-menu dropdown-menu-end dropdown-list animated--grow-in">
+                                        <h6 class="dropdown-header">Centro de alertas</h6><a class="dropdown-item d-flex align-items-center" href="#">
+                                            <div class="me-3">
+                                                <div class="bg-primary icon-circle"><i class="fas fa-file-alt text-white"></i></div>
+                                            </div>
+                                            <div><span class="small text-gray-500">16 de Junio de 2021</span>
+                                                <p>¿Has echado un ojo a los cursos de verano en la UNED? ¿A qué esperas?</p>
+                                            </div>
+                                        </a><a class="dropdown-item d-flex align-items-center" href="#">
+                                            <div class="me-3">
+                                                <div class="bg-success icon-circle"><i class="fas fa-donate text-white"></i></div>
+                                            </div>
+                                            <div><span class="small text-gray-500">14 de Junio de 2021</span>
+                                                <p>Onkiskromos sale elegida como mejor aplicación web por nosotros.</p>
+                                            </div>
+                                        </a><a class="dropdown-item d-flex align-items-center" href="#">
+                                            <div class="me-3">
+                                                <div class="bg-warning icon-circle"><i class="fas fa-exclamation-triangle text-white"></i></div>
+                                            </div>
+                                            <div><span class="small text-gray-500">13 de Junio de 2021</span>
+                                                <p>Hemos detectado actividad inusual en su cuenta. Le recomendamos cambiar la contraseña si usted no ha intentado acceder desde 2.45.56.123 en Kampala, Uganda.</p>
+                                            </div>
+                                        </a><a class="dropdown-item text-center small text-gray-500" href="#">Mostrar todas las alertas</a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="nav-item dropdown no-arrow mx-1">
+                                <div class="nav-item dropdown no-arrow"><a class="dropdown-toggle nav-link" aria-expanded="false" data-bs-toggle="dropdown" href="#"><span class="badge bg-danger badge-counter">7</span><i class="fas fa-envelope fa-fw"></i></a>
+                                    <div class="dropdown-menu dropdown-menu-end dropdown-list animated--grow-in">
+                                        <h6 class="dropdown-header">Centro de mensajes</h6><a class="dropdown-item d-flex align-items-center" href="#">
+                                            <div class="dropdown-list-image me-3"><img class="rounded-circle" src="/landingPageUser/assets/img/avatars/amouranth.png">
+                                                <div class="bg-success status-indicator"></div>
+                                            </div>
+                                            <div class="fw-bold">
+                                                <div class="text-truncate"><span>I absolutely love this page!!.</span></div>
+                                                <p class="small text-gray-500 mb-0">Emilia Fowler - 58m</p>
+                                            </div>
+                                        </a><a class="dropdown-item d-flex align-items-center" href="#">
+                                            <div class="dropdown-list-image me-3"><img class="rounded-circle" src="/landingPageUser/assets/img/avatars/void.jpg">
+                                                <div class="status-indicator"></div>
+                                            </div>
+                                            <div class="fw-bold">
+                                                <div class="text-truncate"><span>Que increible web!</span></div>
+                                                <p class="small text-gray-500 mb-0">Todo el mundo - 1d</p>
+                                            </div>
+                                        </a><a class="dropdown-item d-flex align-items-center" href="#">
+                                            <div class="dropdown-list-image me-3"><img class="rounded-circle" src="/landingPageUser/assets/img/avatars/chivy.png">
+                                                <div class="bg-warning status-indicator"></div>
+                                            </div>
+                                            <div class="fw-bold">
+                                                <div class="text-truncate"><span>No soy capaz de que me salga el cromo de Messi, ¿Qué hago :(?</span></div>
+                                                <p class="small text-gray-500 mb-0">Elchivy00 - 2d</p>
+                                            </div>
+                                        </a><a class="dropdown-item d-flex align-items-center" href="#">
+                                            <div class="dropdown-list-image me-3"><img class="rounded-circle" src="/landingPageUser/assets/img/avatars/jabe.png">
+                                                <div class="bg-success status-indicator"></div>
+                                            </div>
+                                            <div class="fw-bold">
+                                                <div class="text-truncate"><span>¿Vamos hoy al gimnasio?</span></div>
+                                                <p class="small text-gray-500 mb-0">Jabenitez88 - 2w</p>
+                                            </div>
+                                        </a><a class="dropdown-item text-center small text-gray-500" href="#">Mostrar todas las alertas</a>
+                                    </div>
+                                </div>
+                                <div class="shadow dropdown-list dropdown-menu dropdown-menu-end" aria-labelledby="alertsDropdown"></div>
+                            </li>
+                            <div class="d-none d-sm-block topbar-divider"></div>
+                            <li class="nav-item dropdown no-arrow">
+                                <div class="nav-item dropdown no-arrow"><a class="dropdown-toggle nav-link" aria-expanded="false" data-bs-toggle="dropdown" href="#"><span class="d-none d-lg-inline me-2 text-gray-600 small" id="nombre"></span><img class="border rounded-circle img-profile" src="assets/img/avatars/profile-pic.jpg"></a>
+                                    <div class="dropdown-menu shadow dropdown-menu-end animated--grow-in"><a class="dropdown-item" href="/landingPageUser/index"><i class="fas fa-user fa-sm fa-fw me-2 text-gray-400"></i>&nbsp;Perfil</a><a class="dropdown-item" href="/landingPageUser/games"><i class="fas fa-cogs fa-sm fa-fw me-2 text-gray-400"></i>&nbsp;Juegos</a><a class="dropdown-item" href="/landingPageUser/table"><i class="fas fa-list fa-sm fa-fw me-2 text-gray-400"></i>&nbsp;Colecciones</a>
+                                        <div class="dropdown-divider"></div><a class="dropdown-item" href="/closeSession"><i class="fas fa-sign-out-alt fa-sm fa-fw me-2 text-gray-400"></i>&nbsp;Cerrar sesión</a>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+                <div class="container-fluid">
+                    <h3 class="text-dark mb-4">Colecciones de kromos</h3>
+                    <div class="card shadow">
+                        <div class="card-header py-3">
+                            <p class="text-primary m-0 fw-bold">Información de las colecciones</p>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-6 text-nowrap">
+                                    <div id="dataTable_length" class="dataTables_length" aria-controls="dataTable"><label class="form-label">Mostrar<select class="d-inline-block form-select form-select-sm">
+                                                <option value="10" selected="">10</option>
+                                                <option value="25">25</option>
+                                                <option value="50">50</option>
+                                                <option value="100">100</option>
+                                            </select>&nbsp;</label></div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="text-md-end dataTables_filter" id="dataTable_filter"><label class="form-label"><input type="search" class="form-control form-control-sm" aria-controls="dataTable" placeholder="Buscar"></label></div>
+                                </div>
+                            </div>
+                            <div class="table-responsive table mt-2" id="dataTable" role="grid" aria-describedby="dataTable_info">
+                                <table class="table my-0" id="dataTable">
+                                    <thead>
+                                        <tr>
+                                            <th>Nombre de la colección</th>
+                                            <th>Activa</th>
+                                            <th>Puntos</th>
+                                            <th>Existencias</th>
+                                            <th>Fecha Alta</th>
+                                            <th>Estado</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="collections_table">
+                                        <tr>
+                                            <td id="1_logo"><img class="rounded-circle me-2" width="30" height="30" src="assets/img/logoKromos/formula1Logo.png">&nbsp;<a href="#kromo" data-bs-toggle="modal" onclick="modal(1)">Formula 1</a></td>
+                                            <td id="1_active"></td>
+                                            <td id="1_price"></td>
+                                            <td id="1_total"></td>
+                                            <td id="1_date"><br></td>
+                                            <td id="1_state"></td>
+                                        </tr>
+                                        <tr>
+                                            <td id="2_logo"><img class="rounded-circle me-2" width="30" height="30" src="assets/img/logoKromos/csgoLogo.png">&nbsp;<a href="#kromo" data-bs-toggle="modal" onclick="modal(2)">CS:GO</a></td>
+                                            <td id="2_active"></td>
+                                            <td id="2_price"></td>
+                                            <td id="2_total"></td>
+                                            <td id="2_date"><br></td>
+                                            <td id="2_state"></td>
+                                        </tr>
+                                        <tr>
+                                            <td id="3_logo"><img class="rounded-circle me-2" width="30" height="30" src="assets/img/logoKromos/superligaLogo.png">&nbsp;<a href="#kromo" data-bs-toggle="modal" onclick="modal(3)">Europa League</a></td>
+                                            <td id="3_active"></td>
+                                            <td id="3_price"></td>
+                                            <td id="3_total"></td>
+                                            <td id="3_date"><br></td>
+                                            <td id="3_state"></td>
+                                        </tr>
+                                        <tr>
+                                            <td id="4_logo"><img class="rounded-circle me-2" width="30" height="30" src="assets/img/logoKromos/nbaLogo.png">&nbsp;<a href="#kromo" data-bs-toggle="modal" onclick="modal(4)">NBA</a></td>
+                                            <td id="4_active">&nbsp;</td>
+                                            <td id="4_price"></td>
+                                            <td id="4_total"></td>
+                                            <td id="4_date"><br></td>
+                                            <td id="4_state"></td>
+                                        </tr>
+                                        <tr>
+                                            <td id="5_logo"><img class="rounded-circle me-2" width="30" height="30" src="assets/img/logoKromos/rocketLogo.png">&nbsp;<a href="#kromo" data-bs-toggle="modal" onclick="modal(5)">Rocket League</a></td>
+                                            <td id="5_active"></td>
+                                            <td id="5_price"></td>
+                                            <td id="5_total"></td>
+                                            <td id="5_date"><br></td>
+                                            <td id="5_state"></td>
+                                        </tr>
+                                        <tr>
+                                            <td id="6_logo"><img class="rounded-circle me-2" width="30" height="30" src="assets/img/logoKromos/valorantLogo.png">&nbsp;<a href="#kromo" data-bs-toggle="modal" onclick="modal(6)">Valorant</a></td>
+                                            <td id="6_active"></td>
+                                            <td id="6_price"></td>
+                                            <td id="6_total"></td>
+                                            <td id="6_date"></td>
+                                            <td id="6_state"></td>
+                                        </tr>
+                                        <tr></tr>
+                                        <tr></tr>
+                                    </tbody>
+                                    <tfoot>
+                                        <tr>
+                                            <td><strong>Nombre de la colección</strong></td>
+                                            <td><strong>Activa</strong></td>
+                                            <td><strong>Puntos</strong></td>
+                                            <td><strong>Existencias</strong></td>
+                                            <td><strong>Fecha Alta</strong></td>
+                                            <td><strong>Estado</strong></td>
+                                        </tr>
+                                    </tfoot>
+                                </table>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 align-self-center">
+                                    <p id="dataTable_info" class="dataTables_info" role="status" aria-live="polite">Mostrando 1 de 5</p>
+                                </div>
+                                <div class="col-md-6">
+                                    <nav class="d-lg-flex justify-content-lg-end dataTables_paginate paging_simple_numbers">
+                                        <ul class="pagination">
+                                            <li class="page-item disabled"><a class="page-link" href="#" aria-label="Previous"><span aria-hidden="true">«</span></a></li>
+                                            <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                                            <li class="page-item"><a class="page-link" href="#" aria-label="Next"><span aria-hidden="true">»</span></a></li>
+                                        </ul>
+                                    </nav>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <footer class="bg-white sticky-footer">
+                <div class="container my-auto">
+                    <div class="text-center my-auto copyright"><span>Copyright © OnkisKromos 2021</span></div>
+                </div>
+            </footer>
+        </div><a class="border rounded d-inline scroll-to-top" href="#page-top"><i class="fas fa-angle-up"></i></a>
+    </div>
+    <div class="modal fade" role="dialog" tabindex="-1" id="kromo">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Cromos de la Colección</h4><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col"><label class="col-form-label" >Nombre del Cromo</label></div>
+                        </div>
+                        <div class="row">
+                            <div class="col"><input type="text" class="form-control" id="nameModal" readonly></div>
+                        </div>
+                        <div class="row">
+                            <div class="col"><label class="col-form-label">Precio</label></div>
+                        </div>
+                        <div class="row">
+                            <div class="col"><input type="text" class="form-control" id="priceModal" readonly>
+                                <div class="row">
+                                    <div class="col"><label class="col-form-label">Unidades</label></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col"><input type="text" class="form-control" id="unitsModal"readonly></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col"><label class="col-form-label" ></label>Colección</label></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col"><input type="text" class="form-control" id="nameColModal" readonly>
+                                        <div class="row">
+                                            <div class="col"><label class="col-form-label">Imagen del Kromo</label></div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col">
+                                                <div id="expositor-kromo"></div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col"><span>&nbsp;</span></div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col">
+                                                <nav style="margin-left: 170px;">
+                                                    <ul class="pagination">
+                                                        <li class="page-item"><a class="page-link" href="#" aria-label="Previous" onclick="stepBack()"><span aria-hidden="true">«</span></a></li>
+                                                        <li class="page-item"><a class="page-link" href="#" aria-label="Next" onclick="stepForward()"><span aria-hidden="true">»</span></a></li>
+                                                    </ul>
+                                                </nav>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/theme.js"></script>
+</body>
+
+</html>
